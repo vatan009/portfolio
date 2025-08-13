@@ -1,0 +1,97 @@
+/* Navbar container */
+.navbarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(0, 30, 60, 0.25); /* Dark blue glass */
+  backdrop-filter: blur(14px); /* Glass effect */
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Logo */
+.navbarLogo a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #d6e4ff; /* Soft bluish-white */
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.navbarLogo a:hover {
+  color: #66b2ff; /* Brighter blue on hover */
+}
+
+/* Nav links */
+.navLinks {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+}
+
+.navLinks li a {
+  text-decoration: none;
+  color: #eaf4ff;
+  font-size: 1rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navLinks li a:hover {
+  color: #80cfff;
+  transform: scale(1.05);
+}
+
+/* Mobile menu toggle */
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menuToggle span {
+  width: 25px;
+  height: 3px;
+  background: #eaf4ff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .menuToggle {
+    display: flex;
+  }
+
+  .navLinks {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    flex-direction: column;
+    background: rgba(0, 30, 60, 0.35); /* Dark glass for mobile menu */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    width: 200px;
+    padding: 1rem;
+    border-radius: 0 0 8px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transform: translateY(-200%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .navLinks.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .navLinks li {
+    margin: 0.8rem 0;
+  }
+}

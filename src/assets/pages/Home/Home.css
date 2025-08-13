@@ -1,0 +1,110 @@
+/* ====== GLOBAL ====== */
+body {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #0b1e34, #132a46);
+  margin: 0;
+  padding-bottom: 30px;
+  color: #e8f1ff;
+}
+
+/* ====== HERO SECTION ====== */
+.heroBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  padding: 2rem;
+  background: rgba(18, 40, 66, 0.45);
+  backdrop-filter: blur(14px);
+  border-radius: 14px;
+  box-shadow: 0px 8px 30px rgba(0, 140, 255, 0.15);
+  max-width: 900px;
+  margin: 2rem auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  height: 70vh;
+}
+
+.heroBox:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 12px 35px rgba(0, 140, 255, 0.25);
+    
+}
+
+.helloIam {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #7dc3ff;
+  margin-bottom: 0.5rem;
+
+}
+
+.aProgrammer {
+  font-size: 1.5rem;
+  color: #a5d7ff;
+  min-height: 2rem;
+}
+
+/* ====== PARA SECTION ====== */
+.paraContainer {
+  max-width: 850px;
+  margin: 3rem auto 0 auto;
+  padding: 2rem;
+  background: rgba(18, 40, 66, 0.4);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  box-shadow: 0px 4px 20px rgba(0, 140, 255, 0.15);
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: #cfe6ff;
+  text-align: justify;
+  letter-spacing: 0.3px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.paraContainer:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 25px rgba(0, 140, 255, 0.25);
+}
+
+/* Fade-in animation for Para */
+.fadeIn {
+  opacity: 0;
+  animation: fadeInAnimation 1s ease-in forwards;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+@media (max-width: 768px) {
+  .heroBox {
+    padding: 1.5rem;
+  }
+
+  .helloIam {
+    font-size: 1.9rem;
+  }
+
+  .aProgrammer {
+    font-size: 1.3rem;
+  }
+
+  .paraContainer {
+    padding: 1.5rem;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-top: 2rem;
+  }
+}
