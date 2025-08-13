@@ -7,10 +7,11 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(0, 30, 60, 0.25); /* Dark blue glass */
-  backdrop-filter: blur(14px); /* Glass effect */
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(90deg, rgba(255, 242, 200, 0.9), rgba(255, 227, 140, 0.9)); /* Light royal yellow */
+  backdrop-filter: blur(12px); /* Glass effect */
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.35);
+  box-shadow: 0px 4px 12px rgba(255, 223, 88, 0.25);
 }
 
 /* Logo */
@@ -18,13 +19,13 @@
   text-decoration: none;
   font-size: 1.4rem;
   font-weight: bold;
-  color: #d6e4ff; /* Soft bluish-white */
+  color: #6a5500; /* Dark royal brown for contrast */
   letter-spacing: 0.5px;
   transition: color 0.3s ease;
 }
 
 .navbarLogo a:hover {
-  color: #66b2ff; /* Brighter blue on hover */
+  color: #b48c00; /* Rich gold hover */
 }
 
 /* Nav links */
@@ -37,13 +38,14 @@
 
 .navLinks li a {
   text-decoration: none;
-  color: #eaf4ff;
+  color: #6a5500; /* Dark text for visibility */
   font-size: 1rem;
+  font-weight: 600;
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .navLinks li a:hover {
-  color: #80cfff;
+  color: #b48c00; /* Deep gold hover */
   transform: scale(1.05);
 }
 
@@ -58,7 +60,7 @@
 .menuToggle span {
   width: 25px;
   height: 3px;
-  background: #eaf4ff;
+  background: #6a5500;
   border-radius: 2px;
   transition: 0.3s;
 }
@@ -74,13 +76,13 @@
     top: 60px;
     right: 0;
     flex-direction: column;
-    background: rgba(0, 30, 60, 0.35); /* Dark glass for mobile menu */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: linear-gradient(180deg, rgba(255, 242, 200, 0.95), rgba(255, 227, 140, 0.95));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     width: 200px;
     padding: 1rem;
     border-radius: 0 0 8px 8px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 215, 0, 0.3);
     transform: translateY(-200%);
     opacity: 0;
     transition: transform 0.3s ease, opacity 0.3s ease;

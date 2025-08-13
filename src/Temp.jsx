@@ -10,6 +10,7 @@ import Blogs from './assets/pages/Blogs/Blogs'
 import BlogsLayout from './assets/pages/Blogs/BlogsLayout'
 import Contact from './assets/pages/Contact/Contact'
 import ContactLayout from './assets/pages/Contact/ContactLayout'
+import UpcomingProjects from './assets/pages/Home/UpcomingProjects';
 function Temp() {
   const router=createBrowserRouter(
     createRoutesFromElements(
@@ -42,6 +43,7 @@ function Temp() {
 
   return ( 
     <RouterProvider router={router}/>
+    // <UpcomingProjects/>
    );
 }
 

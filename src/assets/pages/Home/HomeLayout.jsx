@@ -6,6 +6,7 @@ import Navbar from "../Navbar";
 function HomeLayout() {
   return ( <>
   <Navbar/>
+
   <Outlet/>
   </> );
 }
