@@ -122,3 +122,140 @@
   /* box-shadow: 0 1px 2px rgba(19, 91, 122, 0.5); */
   /* border-radius: 50%; */
 /* } */
+/* Flipping Logo Styles */
+.logoFlipContainer {
+  perspective: 1000px;
+  display: inline-block;
+}
+
+.flipCard {
+  width: 180px;
+  height: 80px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.logoFlipContainer:hover .flipCard {
+  transform: rotateY(180deg);
+}
+
+.flipFront, .flipBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.flipFront img {
+  width: 50px;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+.logoText {
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.flipBack {
+  transform: rotateY(180deg);
+  background: #0d1b2a; /* dark blue */
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+}
+
+.flipBack img {
+  width: 50px;
+  height: auto;
+  opacity: 0.7;
+}
+/* Flip logo on hover */
+.flipLogo {
+  width: 60px;
+  height: auto;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.navbarLogo:hover .flipLogo {
+  transform: rotateY(180deg);
+}
+
+/* Scrolling text container */
+.scrollingTextContainer {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none; /* allows clicks through text */
+  transform: translateY(-50%);
+}
+
+/* Hidden by default, appears on logo hover */
+.navbarLogo:hover ~ .scrollingTextContainer .scrollingText {
+  animation: scrollText 5s linear forwards;
+}
+
+/* Text style */
+.scrollingText {
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #ffd700;
+  transform: translateX(-100%); /* start off-screen */
+}
+
+/* Keyframes for scrolling left-to-right */
+@keyframes scrollText {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+/* Flip logo on hover */
+.flipLogo {
+  width: 60px;
+  height: auto;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.flipLogo.flipping {
+  transform: rotateY(180deg);
+}
+
+/* Scrolling text container */
+.scrollingTextContainer {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+/* Scrolling text */
+.scrollingText {
+  display: inline-block;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #ffd700;
+  animation: scrollText 5s linear forwards;
+}
+
+/* Keyframes for scrolling left-to-right */
+@keyframes scrollText {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+

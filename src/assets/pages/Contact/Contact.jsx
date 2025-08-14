@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiLeetcode, SiCodeforces, SiGeeksforgeeks } from "react-icons/si";
+import emailjs from "@emailjs/browser";
 import "./Contact.css";
 
 const Contact = () => {
@@ -10,6 +11,7 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+  const [status, setStatus] = useState(""); // For success/failure message
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,9 +19,31 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // handle sending email or API request here
-    alert("Message submitted! I will get back to you soon.");
-    setFormData({ name: "", email: "", subject: "", message: "" });
+
+    emailjs
+      .send(
+        "service_yw5guqi",       // Your Service ID
+        "template_nmsmt2r",      // Your Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          time: new Date().toLocaleString(),
+        },
+        "Yw_ul_dkMBo6aSAxg"     // Your Public Key
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setStatus("✅ Message sent! I will get back to you soon.");
+          setFormData({ name: "", email: "", subject: "", message: "" });
+        },
+        (error) => {
+          console.log(error.text);
+          setStatus("❌ Oops! Something went wrong. Please try again.");
+        }
+      );
   };
 
   return (
@@ -66,6 +90,7 @@ const Contact = () => {
           <button type="submit" className="btn primary">
             Send Message
           </button>
+          {status && <p className="formStatus">{status}</p>}
         </form>
 
         {/* Direct Contact Info */}
