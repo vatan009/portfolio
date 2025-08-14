@@ -24,6 +24,9 @@ function Navbar() {
           <a href="/">Home</a>
         </li>
         <li>
+          <a href="/skills">Skills</a>
+        </li>
+        <li>
           <a href="/about">About Me</a>
         </li>
         <li>

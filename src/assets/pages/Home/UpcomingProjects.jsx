@@ -1,10 +1,8 @@
 import React from "react";
-import ReactFlow, { MiniMap, Controls, Background } from "reactflow";
+import ReactFlow, { MiniMap, Controls } from "reactflow";
 import "reactflow/dist/style.css";
 
-const nodeStyle = {
-  
-};
+const nodeStyle = {};
 
 const labelTitleStyle = {
   fontWeight: 600,
@@ -22,6 +20,7 @@ const UpcomingProjects = () => {
     {
       id: "0",
       type: "default",
+      draggable: false,
       data: {
         label: (
           <div style={nodeStyle}>
@@ -35,6 +34,7 @@ const UpcomingProjects = () => {
     {
       id: "1",
       type: "default",
+      draggable: false,
       data: {
         label: (
           <div style={nodeStyle}>
@@ -48,6 +48,7 @@ const UpcomingProjects = () => {
     {
       id: "2",
       type: "default",
+      draggable: false,
       data: {
         label: (
           <div style={nodeStyle}>
@@ -61,6 +62,7 @@ const UpcomingProjects = () => {
     {
       id: "3",
       type: "default",
+      draggable: false,
       data: {
         label: (
           <div style={nodeStyle}>
@@ -69,11 +71,12 @@ const UpcomingProjects = () => {
           </div>
         ),
       },
-      position: { x:150, y: 300 },
+      position: { x: 150, y: 300 },
     },
     {
       id: "4",
       type: "default",
+      draggable: false,
       data: {
         label: (
           <div style={nodeStyle}>
@@ -87,6 +90,7 @@ const UpcomingProjects = () => {
     {
       id: "5",
       type: "default",
+      draggable: false,
       data: {
         label: (
           <div style={nodeStyle}>
@@ -109,10 +113,17 @@ const UpcomingProjects = () => {
 
   return (
     <div style={{ width: "100%", height: "600px", borderRadius: "12px", overflow: "hidden" }}>
-      <ReactFlow nodes={nodes} edges={edges} fitView>
+      <ReactFlow
+        nodes={nodes}
+        edges={edges}
+        fitView
+        panOnDrag={false}
+        zoomOnScroll={false}
+        zoomOnPinch={false}
+        zoomOnDoubleClick={false}
+      >
         <MiniMap nodeColor="#3b82f6" />
         <Controls />
-        <Background color="#e5e7eb" gap={16} />
       </ReactFlow>
     </div>
   );

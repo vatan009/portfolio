@@ -1,37 +1,12 @@
 /* ====== GLOBAL ====== */
 body {
   font-family: 'Segoe UI', Roboto, sans-serif;
-  background: linear-gradient(135deg, #fffdf4, #fff6d4);
+  background: linear-gradient(135deg, #0b1e34, #132a46);
   margin: 0;
   padding-bottom: 30px;
-  color: #4a3b00;
-}
-
-/* ====== NAVBAR ====== */
-.navbar {
-  position: sticky;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.8rem 2rem;
-  background: rgba(255, 223, 88, 0.25);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(255, 223, 88, 0.35);
-  box-shadow: 0px 4px 12px rgba(255, 223, 88, 0.2);
-  z-index: 10;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: #6a5500;
-  font-weight: 600;
-  margin: 0 1rem;
-  transition: color 0.3s ease;
-}
-
-.navbar a:hover {
-  color: #b48c00;
+  color: #e8f1ff;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 /* ====== HERO SECTION ====== */
@@ -43,33 +18,44 @@ body {
   min-height: 60vh;
   text-align: center;
   padding: 2rem;
-  background: rgba(255, 223, 88, 0.3);
-  backdrop-filter: blur(12px);
-  border-radius: 14px;
-  box-shadow: 0px 8px 25px rgba(255, 223, 88, 0.25);
+  background: rgba(18, 40, 66, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 16px;
+  box-shadow: 0px 8px 30px rgba(0, 140, 255, 0.15);
   max-width: 900px;
   margin: 2rem auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(255, 223, 88, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  height: 70vh;
+  animation: floatHero 5s ease-in-out infinite;
 }
 
 .heroBox:hover {
-  transform: translateY(-4px);
-  box-shadow: 0px 12px 35px rgba(255, 223, 88, 0.4);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0px 14px 38px rgba(0, 140, 255, 0.3);
+}
+
+@keyframes floatHero {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
 }
 
 .helloIam {
-  font-size: 2.4rem;
-  font-weight: bold;
-  color: #8a6d00;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #7dc3ff;
   margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(125, 195, 255, 0.3);
 }
 
 .aProgrammer {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1296efa7;
+  font-size: 1.55rem;
+  color: #a5d7ff;
   min-height: 2rem;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
 }
 
 /* ====== PARA SECTION ====== */
@@ -77,22 +63,23 @@ body {
   max-width: 850px;
   margin: 3rem auto 0 auto;
   padding: 2rem;
-  background: rgba(255, 239, 165, 0.3);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  box-shadow: 0px 4px 20px rgba(255, 223, 88, 0.15);
+  background: rgba(18, 40, 66, 0.4);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 14px;
+  box-shadow: 0px 4px 22px rgba(0, 140, 255, 0.15);
   font-size: 1.08rem;
-  line-height: 1.7;
-  color: #5a4a00;
+  line-height: 1.75;
+  color: #cfe6ff;
   text-align: justify;
   letter-spacing: 0.3px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(255, 223, 88, 0.4);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .paraContainer:hover {
-  transform: translateY(-3px);
-  box-shadow: 0px 6px 25px rgba(255, 223, 88, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0px 8px 28px rgba(0, 140, 255, 0.25);
 }
 
 /* Fade-in animation for Para */
@@ -104,236 +91,108 @@ body {
 @keyframes fadeInAnimation {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(12px) scale(0.98);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
 /* ====== RESPONSIVE DESIGN ====== */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-  }
-  
   .heroBox {
     padding: 1.5rem;
+    height: auto;
+    min-height: 55vh;
   }
 
   .helloIam {
-    font-size: 1.9rem;
+    font-size: 2rem;
   }
 
   .aProgrammer {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
 
   .paraContainer {
     padding: 1.5rem;
-    font-size: 0.98rem;
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.65;
     margin-top: 2rem;
   }
 }
+
+@media (max-width: 480px) {
+  .helloIam {
+    font-size: 1.75rem;
+  }
+
+  .aProgrammer {
+    font-size: 1.1rem;
+  }
+
+  .paraContainer {
+    font-size: 0.95rem;
+  }
+}
+.overallContainer {
+  background-color: #0d1b2a; /* dark-blue theme */
+  color: white;
+  padding: 40px 0;
+}
+
 .homeContainer {
   display: flex;
-  align-items: center;  /* Vertically center */
-  justify-content: space-between; /* Space between left and right */
-  padding: 2rem;
-  gap: 2rem; /* Space between the sections */
-}
-
-.leftSection {
-  flex: 1; /* Take equal space */
-}
-
-.rightSection {
-  flex: 1; /* Take equal space */
-}
-
-/* Optional: make text look cleaner */
-.paraContainer {
-  max-width: 500px;
-}
-/* blue theme starts */
-/* ====== GLOBAL ====== */
-body {
-  font-family: 'Segoe UI', Roboto, sans-serif;
-  background: linear-gradient(135deg, #f0f6ff, #dce8ff);
-  margin: 0;
-  padding-bottom: 30px;
-  color: #00264d;
-}
-
-/* ====== NAVBAR ====== */
-.navbar {
-  position: sticky;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.8rem 2rem;
-  background: rgba(88, 170, 255, 0.25);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(88, 170, 255, 0.35);
-  box-shadow: 0px 4px 12px rgba(88, 170, 255, 0.2);
-  z-index: 10;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: #003d80;
-  font-weight: 600;
-  margin: 0 1rem;
-  transition: color 0.3s ease;
-}
-
-.navbar a:hover {
-  color: #0059b3;
-}
-
-/* ====== HERO SECTION ====== */
-.heroBox {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  min-height: 60vh;
-  text-align: center;
-  padding: 2rem;
-  background: rgba(88, 170, 255, 0.25);
-  backdrop-filter: blur(12px);
-  border-radius: 14px;
-  box-shadow: 0px 8px 25px rgba(88, 170, 255, 0.25);
-  max-width: 900px;
-  margin: 2rem auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(88, 170, 255, 0.4);
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px 5%;
 }
 
-.heroBox:hover {
-  transform: translateY(-4px);
-  box-shadow: 0px 12px 35px rgba(88, 170, 255, 0.4);
+.leftSection, .rightSection {
+  flex: 1 1 45%;
+  min-width: 300px;
 }
 
 .helloIam {
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: bold;
-  color: #004080;
-  margin-bottom: 0.5rem;
+  margin-bottom: 20px;
 }
 
 .aProgrammer {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #00aaff;
-  min-height: 2rem;
-}
-
-/* ====== PARA SECTION ====== */
-.paraContainer {
-  max-width: 850px;
-  margin: 3rem auto 0 auto;
-  padding: 2rem;
-  background: rgba(170, 210, 255, 0.3);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  box-shadow: 0px 4px 20px rgba(88, 170, 255, 0.15);
-  font-size: 1.08rem;
-  line-height: 1.7;
-  color: #002d59;
-  text-align: justify;
-  letter-spacing: 0.3px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(88, 170, 255, 0.4);
-}
-
-.paraContainer:hover {
-  transform: translateY(-3px);
-  box-shadow: 0px 6px 25px rgba(88, 170, 255, 0.35);
-}
-
-/* Fade-in animation for Para */
-.fadeIn {
-  opacity: 0;
-  animation: fadeInAnimation 1s ease-in forwards;
-}
-
-@keyframes fadeInAnimation {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ====== RESPONSIVE DESIGN ====== */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-  }
-  
-  .heroBox {
-    padding: 1.5rem;
-  }
-
-  .helloIam {
-    font-size: 1.9rem;
-  }
-
-  .aProgrammer {
-    font-size: 1.3rem;
-  }
-
-  .paraContainer {
-    padding: 1.5rem;
-    font-size: 0.98rem;
-    line-height: 1.6;
-    margin-top: 2rem;
-  }
-}
-
-/* ====== LAYOUT ====== */
-.homeContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2rem;
-  gap: 2rem;
-}
-
-.leftSection {
-  flex: 1;
-}
-
-.rightSection {
-  flex: 1;
+  font-size: 1.3rem;
+  margin-top: 10px;
+  color: #90e0ef; /* light cyan accent */
 }
 
 .paraContainer {
-  max-width: 500px;
+  font-size: 1rem;
+  line-height: 1.6;
+  padding: 20px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
 }
-/* blue theme ends */
 
-.ProjectCards{
-  /* display: flex; */
-  margin-top: 200px;
-  margin-bottom: 50px;
-  justify-content: space-evenly;
+.paraHead {
+  font-size: 1.4rem;
+  color: #48cae4; /* cyan heading */
 }
-.ProjectCards .card{
-  height: 150px;
-  width: 150px;
-  margin: 20px;
-  align-items: center;
-  background-color: #0059b3;
-  justify-content: center;
+
+.projectsSection {
+  padding: 60px 5%;
 }
-.ProjectCards .cardLeft{
-  align-self: flex-end;
+
+.projectsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
 }
+
+.upcomingProjectsSection {
+  width: 70vw;
+  margin: 60px auto;
+}
+

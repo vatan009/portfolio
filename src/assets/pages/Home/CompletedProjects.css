@@ -1,0 +1,94 @@
+.completedProjects {
+  background-color: #0a1f44; /* deep dark blue */
+  padding: 50px;
+  color: #fff;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  border-bottom: 2px solid #1e90ff;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+.projectsList {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.projectPanel {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 10px rgba(30, 144, 255, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.projectPanel:hover {
+  box-shadow: 0 0 25px rgba(30, 144, 255, 0.7);
+}
+
+.panelContent {
+  display: flex;
+  height: 100%;
+  transform: translateX(0);
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.3, 1);
+}
+
+.fromLeft .panelContent {
+  transform: translateX(-80%);
+}
+
+.fromRight .panelContent {
+  transform: translateX(80%);
+}
+
+.projectPanel:hover.fromLeft .panelContent {
+  transform: translateX(0);
+}
+
+.projectPanel:hover.fromRight .panelContent {
+  transform: translateX(0);
+}
+
+.panelContent img {
+  width: 40%;
+  object-fit: cover;
+}
+
+.textContent {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60%;
+}
+
+.textContent h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #1e90ff;
+}
+
+.textContent p {
+  flex: 1;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.textContent a {
+  color: #fff;
+  background: #1e90ff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.textContent a:hover {
+  background: #63b3ff;
+}
