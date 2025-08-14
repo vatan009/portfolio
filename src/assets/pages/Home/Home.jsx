@@ -115,7 +115,7 @@ function Home() {
 
       <div className="projectsSection">
         <Projects />
-        {/* <CompletedProjects/>   */}
+        {/* <CompletedProjects/> */}
       </div>
 
       <div className="upcomingProjectsSection">
