@@ -99,3 +99,26 @@
     margin: 0.8rem 0;
   }
 }
+.navbarLogo img {
+  max-width: 40px; /* adjust as needed */
+  height: auto;      /* maintains aspect ratio */
+  display: block; 
+  opacity: 0.7;   /* prevents inline spacing issues */
+}
+.navbarLogo img:hover {
+ opacity: 1;
+ /* box-shadow: 10px salmon; */
+}
+.navbarLogo img {
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d; /* enables 3D flip */
+}
+
+.navbarLogo img:hover {
+  transform: rotateY(180deg); /* flips the logo horizontally */
+}
+/* .navbarLogo img:hover {
+  /* transform: rotateY(180deg); */
+  /* box-shadow: 0 1px 2px rgba(19, 91, 122, 0.5); */
+  /* border-radius: 50%; */
+/* } */

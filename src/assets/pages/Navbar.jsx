@@ -7,7 +7,7 @@ function Navbar() {
   return (
     <nav className="navbarContainer">
       <div className="navbarLogo">
-        <a href="/">Vatan Pawar</a>
+        <a href="/"><img src="/images/logo4.png" alt="" /></a>
       </div>
 
       <div

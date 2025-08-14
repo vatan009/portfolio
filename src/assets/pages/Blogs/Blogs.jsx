@@ -1,7 +1,9 @@
+import CommingSoon from "../CommingSoon/ComingSoon";
+
 function Blogs() {
   return ( <>
    
-   -Blogs-
+     <CommingSoon/>
   
   </> );
 }

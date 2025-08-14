@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 function ContactLayout() {
   return (  <>
-  contact layout
+  {/* contact layout */}
   <Outlet/>
   </>);
 }

@@ -1,8 +1,10 @@
+import CommingSoon from "../CommingSoon/ComingSoon";
+
 function Certificates() {
   return ( <>
    
-   -Certificates-
-  
+
+  <CommingSoon/>
   </> );
 }
 
